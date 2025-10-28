@@ -1,0 +1,5 @@
+# Local environment files
+TARA/Frontend/.env
+TARA/Frontend/.env.local
+TARA/Frontend/.env.*.local
+
