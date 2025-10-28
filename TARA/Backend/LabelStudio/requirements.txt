@@ -1,0 +1,9 @@
+# Label Studio requirements
+label-studio==1.10.1
+label-studio-sdk==0.0.32
+Pillow>=10.0.0
+pandas>=2.0.0
+
+
+
+

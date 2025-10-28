@@ -1,0 +1,83 @@
+# Physics-Based Landslide Detection Configuration
+# No training labels required - uses physical principles
+
+# Physical Criteria Thresholds
+critical_slope: 30.0          # degrees - slope threshold for landslide detection
+min_depth_change: 5.0         # meters - minimum elevation change
+max_depth_change: 100.0       # meters - maximum elevation change
+min_width: 20.0               # meters - minimum landslide width
+max_width: 500.0              # meters - maximum landslide width
+min_roughness: 0.1            # relative units - minimum terrain roughness
+max_roughness: 2.0            # relative units - maximum terrain roughness
+
+# Detection Weights (must sum to 1.0)
+slope_weight: 0.4             # weight for slope criteria
+depth_weight: 0.3             # weight for depth criteria
+width_weight: 0.2             # weight for width criteria
+roughness_weight: 0.1         # weight for roughness criteria
+
+# Detection Threshold
+detection_threshold: 0.6      # threshold for final landslide detection (0.0-1.0)
+
+# Post-processing
+morphology_kernel_size: 3     # kernel size for morphological operations
+min_polygon_area: 100.0       # minimum polygon area in square meters
+max_polygon_area: 1000000.0   # maximum polygon area in square meters
+
+# Output Settings
+save_intermediate_results: true    # save individual criteria maps
+save_polygons: true               # save polygon features
+save_statistics: true             # save detection statistics
+output_format: "geojson"          # output format for polygons
+
+# Validation Settings
+validation_enabled: true          # enable validation reporting
+validation_threshold: 0.5         # threshold for validation
+save_validation_maps: true        # save validation maps
+
+# Performance Settings
+use_gpu: true                     # use GPU for processing (if available)
+batch_size: 1                     # batch size for processing
+max_memory_usage: 0.8             # maximum memory usage (0.0-1.0)
+
+# Logging
+log_level: "INFO"                 # logging level
+save_logs: true                   # save logs to file
+log_file: "outputs/logs/physics_based.log"
+
+# Quality Assurance
+enable_quality_checks: true       # enable quality assurance checks
+min_confidence: 0.7               # minimum confidence for detections
+max_processing_time: 3600         # maximum processing time in seconds
+
+# Chandrayaan-2 Specific Settings
+chandrayaan_data_dir: "../chandrayaan-2"  # path to Chandrayaan-2 dataset
+process_all_observations: true    # process all available observations
+max_observations: null            # maximum number of observations to process (null = all)
+observation_filter: null          # filter observations by criteria
+
+# Output Directories
+output_base_dir: "outputs"        # base output directory
+detection_output_dir: "physics_detection"  # detection results directory
+validation_output_dir: "validation"        # validation results directory
+reports_output_dir: "reports"              # reports directory
+logs_output_dir: "logs"                    # logs directory
+
+# File Formats
+input_formats:
+  optical: "tif"                  # optical data format
+  dtm: "tif"                      # DTM data format
+  slope: "tif"                    # slope data format
+  roughness: "tif"                # roughness data format
+
+output_formats:
+  mask: "png"                     # binary mask format
+  score: "tif"                    # score map format
+  polygons: "geojson"             # polygon format
+  statistics: "json"              # statistics format
+
+# Metadata
+detection_method: "physics_based"  # detection method identifier
+version: "1.0.0"                  # configuration version
+created_date: "2024-01-01"        # configuration creation date
+description: "Physics-based landslide detection using slope, depth, and width criteria"

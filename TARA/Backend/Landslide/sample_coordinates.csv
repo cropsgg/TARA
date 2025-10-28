@@ -1,0 +1,9 @@
+# Sample CSV file for longitude and latitude knowledge
+# This file contains sample Selenographic coordinates for lunar regions
+# Format: region_id,longitude,latitude,description
+
+region_001,0.0,0.0,Equatorial region near center
+region_002,45.0,30.0,Northeast highland region
+region_003,-30.0,-20.0,Southwest mare region
+region_004,120.0,60.0,Far side highland
+region_005,-150.0,45.0,Western limb region
