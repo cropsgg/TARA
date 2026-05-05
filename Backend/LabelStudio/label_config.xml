@@ -1,0 +1,25 @@
+<View>
+  <Header value="Lunar Surface Feature Detection"/>
+  <Text name="instruction" value="Draw bounding boxes around boulders and landslides"/>
+  
+  <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="true"/>
+  
+  <RectangleLabels name="label" toName="image" strokeWidth="3">
+    <Label value="boulder" background="red"/>
+    <Label value="landslide" background="blue"/>
+  </RectangleLabels>
+  
+  <Choices name="quality" toName="image" choice="single">
+    <Choice value="high_quality"/>
+    <Choice value="medium_quality"/>
+    <Choice value="low_quality"/>
+  </Choices>
+  
+  <TextArea name="notes" toName="image" 
+            placeholder="Additional notes about the image..."
+            rows="3"/>
+</View>
+
+
+
+

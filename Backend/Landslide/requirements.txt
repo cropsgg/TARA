@@ -1,0 +1,27 @@
+# T.A.R.A. Streamlined Physics-Based Landslide Detection System
+# Requirements for Chandrayaan-2 data integration and physics-based detection
+
+# Web API Framework
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.5.0
+
+# Computer Vision & Image Processing
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# Geospatial Data Processing
+rasterio>=1.3.0
+shapely>=2.0.0
+geopandas>=0.14.0
+pandas>=2.0.0
+
+# Configuration & Utilities
+PyYAML>=6.0.0
+tqdm>=4.65.0
+
+# File handling
+python-multipart>=0.0.6
+
+# HTTP requests for testing
+requests>=2.31.0

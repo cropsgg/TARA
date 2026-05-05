@@ -1,0 +1,432 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 80%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 8%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 8%;
+    --input: 0 0% 8%;
+    --ring: 0 0% 80%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 60%;
+    --sidebar-primary: 0 0% 80%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 8%;
+    --sidebar-ring: 0 0% 80%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 80%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 8%;
+    --accent-foreground: 0 0% 95%;
+
+    --border: 0 0% 8%;
+    --input: 0 0% 8%;
+    --ring: 0 0% 80%;
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 60%;
+    --sidebar-primary: 0 0% 80%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 8%;
+    --sidebar-ring: 0 0% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Force global background to solid black */
+  html, body, #root {
+    background-color: #000;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom animations for space theme */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(75, 85, 99, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(75, 85, 99, 0.6);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Galaxy background effects */
+  .stars-small {
+    background-image:
+      radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+      radial-gradient(
+        1px 1px at 40px 70px,
+        rgba(255, 255, 255, 0.8),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 90px 40px,
+        rgba(255, 255, 255, 0.6),
+        transparent
+      ),
+      radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+      radial-gradient(
+        1px 1px at 160px 30px,
+        rgba(255, 255, 255, 0.7),
+        transparent
+      );
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: sparkle 20s linear infinite;
+  }
+
+  .stars-medium {
+    background-image:
+      radial-gradient(
+        2px 2px at 30px 40px,
+        rgba(75, 85, 99, 0.8),
+        transparent
+      ),
+      radial-gradient(
+        2px 2px at 80px 20px,
+        rgba(107, 114, 128, 0.9),
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 120px 60px,
+        rgba(75, 85, 99, 0.7),
+        transparent
+      ),
+      radial-gradient(
+        2px 2px at 170px 90px,
+        rgba(107, 114, 128, 0.6),
+        transparent
+      );
+    background-repeat: repeat;
+    background-size: 250px 150px;
+    animation: sparkle 25s linear infinite reverse;
+  }
+
+  .stars-large {
+    background-image:
+      radial-gradient(
+        3px 3px at 50px 80px,
+        rgba(156, 163, 175, 0.9),
+        transparent
+      ),
+      radial-gradient(
+        2px 2px at 100px 30px,
+        rgba(107, 114, 128, 0.8),
+        transparent
+      ),
+      radial-gradient(
+        3px 3px at 150px 100px,
+        rgba(75, 85, 99, 0.7),
+        transparent
+      );
+    background-repeat: repeat;
+    background-size: 300px 200px;
+    animation: sparkle 30s linear infinite;
+  }
+
+  @keyframes sparkle {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100px);
+    }
+  }
+
+  /* Shooting stars */
+  .shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(45deg, #fff, transparent);
+    border-radius: 50%;
+  }
+
+  .shooting-star::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
+    transform: rotate(45deg) translate(-50px, -50px);
+  }
+
+  .shooting-star-1 {
+    top: 20%;
+    left: 10%;
+    animation: shoot1 8s linear infinite;
+  }
+
+  .shooting-star-2 {
+    top: 60%;
+    left: 80%;
+    animation: shoot2 12s linear infinite;
+    animation-delay: 3s;
+  }
+
+  .shooting-star-3 {
+    top: 40%;
+    left: 60%;
+    animation: shoot3 10s linear infinite;
+    animation-delay: 6s;
+  }
+
+  @keyframes shoot1 {
+    0% {
+      transform: translate(0, 0) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(300px, 300px) scale(0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shoot2 {
+    0% {
+      transform: translate(0, 0) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-400px, 400px) scale(0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shoot3 {
+    0% {
+      transform: translate(0, 0) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(250px, -350px) scale(0);
+      opacity: 0;
+    }
+  }
+
+  /* Nebula animation */
+  @keyframes nebula-drift {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(10px, -15px) scale(1.05);
+    }
+    50% {
+      transform: translate(-5px, 10px) scale(0.95);
+    }
+    75% {
+      transform: translate(-10px, -5px) scale(1.02);
+    }
+  }
+
+  /* Cursor trail animation */
+  @keyframes cursorStarTrail {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0px);
+    }
+    20% {
+      opacity: 0.95;
+      transform: scale(1.2);
+      filter: blur(0.3px);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.3);
+      filter: blur(0.5px);
+    }
+    80% {
+      opacity: 0.5;
+      transform: scale(0.9);
+      filter: blur(0.8px);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.4);
+      filter: blur(1px);
+    }
+  }
+
+  .cursor-star-trail {
+    animation: cursorStarTrail 0.8s ease-out forwards;
+  }
+
+  /* Twinkling stars for navbar */
+  @keyframes navTwinkle {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+  .nav-stars, .nav-stars-2, .nav-stars-3 {
+    background-repeat: repeat;
+    pointer-events: none;
+  }
+  .nav-stars {
+    background-image:
+      radial-gradient(2px 2px at 15px 20px, rgba(255,255,255,1), transparent),
+      radial-gradient(2px 2px at 60px 35px, rgba(255,255,255,0.9), transparent),
+      radial-gradient(2px 2px at 110px 15px, rgba(255,255,255,0.95), transparent),
+      radial-gradient(2px 2px at 150px 45px, rgba(255,255,255,0.85), transparent);
+    background-size: 180px 80px;
+    animation: navTwinkle 2.2s ease-in-out infinite;
+    opacity: 0.75;
+  }
+  .nav-stars-2 {
+    background-image:
+      radial-gradient(2px 2px at 30px 25px, rgba(255,255,255,1), transparent),
+      radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.9), transparent),
+      radial-gradient(2px 2px at 140px 10px, rgba(255,255,255,0.95), transparent),
+      radial-gradient(2px 2px at 170px 55px, rgba(255,255,255,0.85), transparent);
+    background-size: 220px 90px;
+    animation: navTwinkle 3s ease-in-out infinite reverse;
+    opacity: 0.6;
+  }
+  .nav-stars-3 {
+    background-image:
+      radial-gradient(1.5px 1.5px at 25px 15px, rgba(255,255,255,0.9), transparent),
+      radial-gradient(1.5px 1.5px at 75px 50px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1.5px 1.5px at 135px 25px, rgba(255,255,255,0.85), transparent);
+    background-size: 200px 85px;
+    animation: navTwinkle 2.6s ease-in-out infinite;
+    opacity: 0.5;
+  }
+}
