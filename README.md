@@ -1,4 +1,4 @@
-# 🌙 TARA - Terrain-Aware Rover Autonomy
+#  TARA - Terrain-Aware Rover Autonomy
 
 <div align="center">
   <img src="Frontend/taralogo.jpeg" alt="TARA Logo" width="400" height="auto" />
@@ -20,17 +20,17 @@
 
 ---
 
-## 🌟 Project Overview
+##  Project Overview
 
 **TARA (Terrain-Aware Rover Autonomy)** is a comprehensive lunar rover navigation system that combines advanced AI algorithms, computer vision, and blockchain technology to ensure safe and efficient autonomous exploration of the Moon's surface. The system features intelligent energy management, real-time obstacle detection, and secure data transmission through ISRO's private Avalanche subnet.
 
-### 🎯 Mission Statement
+###  Mission Statement
 
 To revolutionize lunar exploration by providing autonomous rovers with the intelligence to navigate complex lunar terrain safely, efficiently, and reliably while maintaining optimal power consumption and ensuring mission success through advanced AI and blockchain technologies.
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ### Complete System Overview
 
@@ -95,32 +95,32 @@ To revolutionize lunar exploration by providing autonomous rovers with the intel
 
 ---
 
-## 🚀 Key Features
+##   Key Features
 
-### 🧠 Dual-Mode AI Navigation
+###   Dual-Mode AI Navigation
 - **Intelligent Switching**: Automatic switching between heuristic algorithms and full machine learning models based on energy levels
 - **Energy-Aware Planning**: Dynamic power management with solar charging integration
 - **Adaptive Algorithms**: Real-time algorithm selection based on terrain complexity and power availability
 
-### 👁️ Advanced Computer Vision
+###   Advanced Computer Vision
 - **Real-time Object Detection**: YOLOv8 and EfficientDet models for landslide and boulder detection
 - **Instance Segmentation**: Precise identification of individual obstacles
 - **Performance Metrics**: 94.2% accuracy for landslides, 97.6% for boulders
 - **Live Processing**: 24.3 FPS real-time analysis
 
-### ⚡ Intelligent Power Management
+###   Intelligent Power Management
 - **Battery Monitoring**: Real-time battery level tracking and optimization
 - **ML Decision Logic**: Automatic switching between ML and heuristic modes
 - **Power Efficiency**: 75% power savings with intelligent fallback systems
 - **Solar Integration**: Dynamic solar charging optimization
 
-### 🔒 Blockchain Security
+###   Blockchain Security
 - **Immutable Data Storage**: Using ISRO's private Avalanche subnet
 - **Secure Data Transfer**: Military-grade encryption for satellite-to-ground communication
 - **Validator Consensus**: 4/4 validator confirmation required
 - **Smart Contract Integration**: Automated mission data validation
 
-### 🎮 Interactive Dashboard
+###   Interactive Dashboard
 - **Real-time Monitoring**: Live system status and mission progress
 - **Mission Control**: Complete mission lifecycle management
 - **Performance Analytics**: Comprehensive metrics and reporting
@@ -128,7 +128,7 @@ To revolutionize lunar exploration by providing autonomous rovers with the intel
 
 ---
 
-## 📱 Application Modules
+##   Application Modules
 
 ### 1. Path Finder (`/path-finder`)
 **Intelligent Navigation System**
