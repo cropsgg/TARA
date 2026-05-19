@@ -1,4 +1,4 @@
-#  TARA - Terrain-Aware Rover Agent
+#  TARA - Terrain Aware Rover Agent
 
 <div align="center">
   <img src="Frontend/taralogo.jpeg" alt="TARA Logo" width="400" height="auto" />
